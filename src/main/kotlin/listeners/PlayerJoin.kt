@@ -17,7 +17,7 @@ class PlayerJoin() : Listener {
     player.sendMessage("""
     §bHeyy my boy §6${player.name} §b!
 
-    §8• §cVoici ton adresse IP : §6${player.address} ?: "N/A"}
+    §8• §cVoici ton adresse IP : §6${player.address?.address?.hostAddress?: "N/A"} 
     §8• §cTa render distance est de : §6${player.clientViewDistance}
     §8• §cT'habites ici : §6${player.locale}
     §8• §fVive les chèvres :)

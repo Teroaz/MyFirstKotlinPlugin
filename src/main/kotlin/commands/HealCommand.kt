@@ -11,12 +11,10 @@ class HealCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<out String>): Boolean {
         if (sender is Player) {
 
-            /*
-            if (!sender.hasPermission("terozax.heal")) {
+            if (!sender.isOp || !sender.hasPermission("terozax.heal")) {
                 sender.sendMessage("§8[§cHeal§8] §7Vous n'avez pas la permission de &§/heal§7.")
-                        return false
+                return false
             }
-            */
 
             if (args.isEmpty()) {
                 sender.health = sender.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue ?: 20.0
@@ -26,7 +24,12 @@ class HealCommand : CommandExecutor {
                 val targetPlayer: Player? = sender.server.getPlayer(args[0])
                 targetPlayer?.let { pl ->
                     pl.health = pl.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue ?: 20.0
-                    pl.sendMessage("§8[§cHeal§8] §c${sender.name} §7vous a soigné.")
+                    if (pl.name == sender.name) {
+                        sender.sendMessage("§8[§cHeal§8] §7Vous avez été soigné avec succès.")
+                    } else {
+                        sender.sendMessage("§8[§cHeal§8] §7Vous avez soigné §c${sender.name} §7avec succès.")
+                        pl.sendMessage("§8[§cHeal§8] §c${sender.name} §7vous a soigné.")
+                    }
                     return true
                 }
                 sender.sendMessage("§8[§cHeal§8] §7Ce joueur n'est pas connecté.")

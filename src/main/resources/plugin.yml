@@ -9,3 +9,7 @@ commands:
   heal:
     description: Se soigner ou soigner un joueur
     permission: terozax.heal
+  broadcast:
+    description: Diffuser un message à tous les joueurs
+    permission: terozax.broadcast
+    aliases : ["bc","broad"]

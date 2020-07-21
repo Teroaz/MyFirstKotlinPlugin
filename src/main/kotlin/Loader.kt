@@ -1,5 +1,6 @@
 package main
 
+import main.commands.BroadcastCommand
 import main.commands.HealCommand
 import main.listeners.eventLoader
 
@@ -17,5 +18,6 @@ class Loader : JavaPlugin(), Listener, CommandExecutor{
 
         // Commandes
         getCommand("heal")?.setExecutor(HealCommand())
+        getCommand("broadcast")?.setExecutor(BroadcastCommand())
     }
 }

@@ -20,7 +20,7 @@ class HealCommand : CommandExecutor {
 
             if (args.isEmpty()) {
                 sender.health = sender.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue ?: 20.0
-                sender.sendMessage("§8[§cHeal§8] &7Vous avez été soigné avec succès.")
+                sender.sendMessage("§8[§cHeal§8] §7Vous avez été soigné avec succès.")
                 return true
             } else {
                 val targetPlayer: Player? = sender.server.getPlayer(args[0])
@@ -29,6 +29,7 @@ class HealCommand : CommandExecutor {
                     pl.sendMessage("§8[§cHeal§8] §c${sender.name} §7vous a soigné.")
                     return true
                 }
+                sender.sendMessage("§8[§cHeal§8] §7Ce joueur n'est pas connecté.")
                 return false
             }
         } else {

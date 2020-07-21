@@ -1,0 +1,11 @@
+name: TerozaxCore
+author: Teroaz
+version: 1.0.0
+api-version : "1.13"
+description: Plugin me permettant l'apprentissage de Spigot & du Kotlin
+main: main.Loader
+
+commands:
+  heal:
+    description: Se soigner ou soigner un joueur
+    permission: terozax.heal

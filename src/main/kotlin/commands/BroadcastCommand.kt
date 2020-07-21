@@ -9,12 +9,12 @@ class BroadcastCommand : CommandExecutor{
 
         if (!sender.isOp || !sender.hasPermission("terozax.broadcast")) {
             sender.sendMessage("§8[§cBroadcast§8] §7Vous n'avez pas la permission de &§/broadcast§7.")
-            return false
+            return true
         }
 
         if (args.isEmpty()) {
             sender.sendMessage("§8[§cBroadcast§8] §7La commande doit être suivie du message à diffuser.")
-            return false
+            return true
         }
 
         sender.server.broadcastMessage("§8§l[§c§lALERTE§8§l] §6§l${sender.name} §7: §b${args.joinToString(" ")}")

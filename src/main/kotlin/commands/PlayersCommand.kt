@@ -15,7 +15,7 @@ class PlayersCommand : CommandExecutor{
     override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<out String>): Boolean { 
         if (sender !is Player) {
             sender.sendMessage("[Players] Cette commande ne peut être exécutée depuis la console.")
-            return false
+            return true
         }
 
         val connectedPlayers = sender.server.onlinePlayers
@@ -39,7 +39,7 @@ class PlayersCommand : CommandExecutor{
         }
 
         sender.openInventory(commandGui)
-    return true;
+    return true
     }
 }
 

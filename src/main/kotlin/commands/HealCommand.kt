@@ -11,12 +11,12 @@ class HealCommand : CommandExecutor {
     override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<out String>): Boolean {
         if (sender !is Player) {
             sender.sendMessage("[Heal] Cette commande ne peut être exécutée depuis la console.")
-            return false
+            return true
         }
 
         if (!sender.isOp || !sender.hasPermission("terozax.heal")) {
             sender.sendMessage("§8[§cHeal§8] §7Vous n'avez pas la permission de &§/heal§7.")
-            return false
+            return true
         }
 
         if (args.isEmpty()) {
@@ -36,7 +36,7 @@ class HealCommand : CommandExecutor {
                 return true
                 }
             sender.sendMessage("§8[§cHeal§8] §7Ce joueur n'est pas connecté.")
-            return false
+            return true
             }
         }
     }

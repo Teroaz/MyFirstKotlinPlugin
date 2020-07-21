@@ -2,6 +2,8 @@ package main
 
 import main.commands.BroadcastCommand
 import main.commands.HealCommand
+import main.commands.PlayersCommand
+
 import main.listeners.eventLoader
 
 import org.bukkit.command.CommandExecutor
@@ -19,5 +21,6 @@ class Loader : JavaPlugin(), Listener, CommandExecutor{
         // Commandes
         getCommand("heal")?.setExecutor(HealCommand())
         getCommand("broadcast")?.setExecutor(BroadcastCommand())
+        getCommand("players")?.setExecutor(PlayersCommand())
     }
 }

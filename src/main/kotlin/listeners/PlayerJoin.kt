@@ -24,6 +24,5 @@ class PlayerJoin() : Listener {
 
     """.trimIndent())
 
-    player.gameMode = GameMode.CREATIVE
     }
 }

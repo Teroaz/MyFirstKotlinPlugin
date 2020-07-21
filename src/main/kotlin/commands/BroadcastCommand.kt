@@ -19,7 +19,6 @@ class BroadcastCommand : CommandExecutor{
 
         sender.server.broadcastMessage("§8§l[§c§lALERTE§8§l] §6§l${sender.name} §7: §b${args.joinToString(" ")}")
         return true
-
     }
 
 }

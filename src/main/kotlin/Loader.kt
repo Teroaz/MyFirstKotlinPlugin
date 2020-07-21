@@ -13,14 +13,19 @@ import org.bukkit.plugin.java.JavaPlugin
 class Loader : JavaPlugin(), Listener, CommandExecutor{
 
     override fun onEnable() {
-        logger.info("Core démarré avec succès")
 
-        // Events
+        // Event Handler
+        logger.info("[INIT] Event Loader")
         eventLoader(this)
+        logger.info("[SUCCESS] Init de l'event loader")
 
         // Commandes
+        logger.info("[INIT] Commandes")
         getCommand("heal")?.setExecutor(HealCommand())
         getCommand("broadcast")?.setExecutor(BroadcastCommand())
         getCommand("players")?.setExecutor(PlayersCommand())
+        logger.info("[SUCCESS] Init des commandes")
+
+        logger.info("[SUCCESS] Terozax-Core démarré")
     }
 }

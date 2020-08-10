@@ -63,6 +63,10 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <source>7</source>
+          <target>7</target>
+        </configuration>
       </plugin>
       <plugin>
         <artifactId>maven-shade-plugin</artifactId>

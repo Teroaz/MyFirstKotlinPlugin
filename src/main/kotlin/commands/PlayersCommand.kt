@@ -34,7 +34,7 @@ class PlayersCommand : CommandExecutor{
 
             meta.owningPlayer = player
             meta.setDisplayName("§b${player.name}")
-            meta.lore = mutableListOf("§8• §cSanté §7: ${player.health.toInt()} / ${player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue?.toInt() ?: 20}", "§8• §6Faim §7: ${(player.foodLevel)} / 20", "§8 • §6Monde §7: ${player.world.name}")
+            meta.lore = mutableListOf("§8• §cSanté §7: ${player.health.toInt()} / ${player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue?.toInt() ?: 20}", "§8• §6Faim §7: ${(player.foodLevel)} / 20", "§8• §6Monde §7: ${player.world.name}")
 
             playerHead.itemMeta = meta
 

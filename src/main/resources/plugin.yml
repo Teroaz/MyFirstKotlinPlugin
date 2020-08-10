@@ -16,4 +16,3 @@ commands:
   players:
     description: Lister les joueurs connectés
     permission: terozax.players
-  teroaz:

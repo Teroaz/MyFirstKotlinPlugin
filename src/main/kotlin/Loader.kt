@@ -1,6 +1,5 @@
 package main
 
-import commands.TeroazCommand
 import main.commands.BroadcastCommand
 import main.commands.HealCommand
 import main.commands.PlayersCommand
@@ -25,7 +24,6 @@ class Loader : JavaPlugin(), Listener, CommandExecutor{
         getCommand("heal")?.setExecutor(HealCommand())
         getCommand("broadcast")?.setExecutor(BroadcastCommand())
         getCommand("players")?.setExecutor(PlayersCommand())
-        getCommand("teroaz")?.setExecutor(TeroazCommand())
         logger.info("[SUCCESS] Init des commandes")
 
         logger.info("[SUCCESS] Terozax-Core démarré")

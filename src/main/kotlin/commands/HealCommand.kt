@@ -30,7 +30,7 @@ class HealCommand : CommandExecutor {
                 if (pl.name == sender.name) {
                     sender.sendMessage("§8[§cHeal§8] §7Vous avez été soigné avec succès.")
                 } else {
-                    sender.sendMessage("§8[§cHeal§8] §7Vous avez soigné §c${sender.name} §7avec succès.")
+                    sender.sendMessage("§8[§cHeal§8] §7Vous avez soigné §c${pl.name} §7avec succès.")
                     pl.sendMessage("§8[§cHeal§8] §c${sender.name} §7vous a soigné.")
                 }
                 return true

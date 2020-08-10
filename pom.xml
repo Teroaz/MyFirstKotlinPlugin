@@ -38,6 +38,11 @@
             <version>1.16.1-R0.1-SNAPSHOT</version> <!-- https://hub.spigotmc.org/nexus/content/repositories/snapshots/org/spigotmc/spigot-api/maven-metadata.xml-->
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20190722</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -92,6 +97,10 @@
                         <goals> <goal>testCompile</goal> </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <source>7</source>
+                    <target>7</target>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

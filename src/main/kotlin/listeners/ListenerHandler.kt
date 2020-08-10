@@ -11,4 +11,7 @@ fun eventLoader (loader: Loader) {
     Bukkit.getPluginManager().registerEvents(PlayerChat(), loader)
     loader.logger.info("[SUCCESS] Event : PlayerChatEvent")
 
+
+    Bukkit.getPluginManager().registerEvents(, loader)
+    loader.logger.info("[SUCCESS] Event : PlayerChatEvent")
 }

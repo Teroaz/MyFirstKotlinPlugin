@@ -11,11 +11,10 @@ import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.SkullMeta
 
-import java.math.BigDecimal
-import java.math.RoundingMode
-
 class PlayersCommand : CommandExecutor{
-    override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<out String>): Boolean { 
+
+    override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<out String>): Boolean {
+
         if (sender !is Player) {
             sender.sendMessage("[Players] Cette commande ne peut être exécutée depuis la console.")
             return true
@@ -37,7 +36,6 @@ class PlayersCommand : CommandExecutor{
             meta.lore = mutableListOf("§8• §cSanté §7: ${player.health.toInt()} / ${player.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue?.toInt() ?: 20}", "§8• §6Faim §7: ${(player.foodLevel)} / 20", "§8• §6Monde §7: ${player.world.name}")
 
             playerHead.itemMeta = meta
-
             commandGui.setItem(index, playerHead)
         }
         sender.openInventory(commandGui)

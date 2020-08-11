@@ -9,13 +9,14 @@ import org.bukkit.entity.Player
 class HealCommand : CommandExecutor {
 
     override fun onCommand(sender: CommandSender, cmd: Command, lbl: String, args: Array<out String>): Boolean {
+
         if (sender !is Player) {
             sender.sendMessage("[Heal] Cette commande ne peut être exécutée depuis la console.")
             return true
         }
 
         if (!sender.isOp || !sender.hasPermission("terozax.heal")) {
-            sender.sendMessage("§8[§cHeal§8] §7Vous n'avez pas la permission de &§/heal§7.")
+            sender.sendMessage("§8[§cHeal§8] §7Vous n'avez pas la permission de §c/heal§7.")
             return true
         }
 

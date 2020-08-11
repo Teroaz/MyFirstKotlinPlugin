@@ -12,7 +12,10 @@ commands:
   broadcast:
     description: Diffuser un message à tous les joueurs
     permission: terozax.broadcast
-    aliases : ["bc","broad"]
+    aliases : ["bc"]
   players:
     description: Lister les joueurs connectés
     permission: terozax.players
+  invsee:
+    description: Apercevoir l'inventaire d'un joueur
+    permission: terozax.invsee

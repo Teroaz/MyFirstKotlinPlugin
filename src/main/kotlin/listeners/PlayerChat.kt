@@ -13,6 +13,8 @@ class PlayerChat : Listener{
         val player = event.player
         val message = event.message
 
-        player.server.broadcastMessage("§6${player.name}§7 : §f${message.replace("&","§")}")
+        if (message.replace("(&.?)".toRegex(), "").isNotEmpty()) {
+            player.server.broadcastMessage("§6${player.name}§7 : §f${message.replace("&", "§")}")
+        }
     }
 }

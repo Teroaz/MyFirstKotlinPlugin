@@ -20,24 +20,29 @@ class HealCommand : CommandExecutor {
             return true
         }
 
+        var playerToHeal: Player? = null
+
         if (args.isEmpty()) {
-            sender.health = sender.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue ?: 20.0
+           playerToHeal = sender
             sender.sendMessage("§8[§cHeal§8] §7Vous avez été soigné avec succès.")
-            return true
         } else {
             val targetPlayer: Player? = sender.server.getPlayer(args[0])
-            targetPlayer?.let { pl ->
-                pl.health = pl.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue ?: 20.0
-                if (pl.name == sender.name) {
-                    sender.sendMessage("§8[§cHeal§8] §7Vous avez été soigné avec succès.")
-                } else {
-                    sender.sendMessage("§8[§cHeal§8] §7Vous avez soigné §c${pl.name} §7avec succès.")
-                    pl.sendMessage("§8[§cHeal§8] §c${sender.name} §7vous a soigné.")
-                }
+            if (targetPlayer == null) {
+                sender.sendMessage("§8[§cHeal§8] §7Ce joueur n'est pas connecté.")
                 return true
-                }
-            sender.sendMessage("§8[§cHeal§8] §7Ce joueur n'est pas connecté.")
-            return true
             }
+
+            playerToHeal = targetPlayer
+            if (targetPlayer.name == sender.name) {
+                sender.sendMessage("§8[§cHeal§8] §7Vous avez été soigné avec succès.")
+            } else {
+                sender.sendMessage("§8[§cHeal§8] §7Vous avez soigné §c${targetPlayer.name} §7avec succès.")
+                targetPlayer.sendMessage("§8[§cHeal§8] §c${sender.name} §7vous a soigné.")
+                }
+        }
+
+        playerToHeal.health = playerToHeal.getAttribute(Attribute.GENERIC_MAX_HEALTH)?.defaultValue ?: 20.0
+        playerToHeal.foodLevel = 20
+        return true
         }
     }

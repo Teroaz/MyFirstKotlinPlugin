@@ -25,11 +25,12 @@ class InvseeCommand : CommandExecutor {
             return true
         } else {
             val targetPlayer: Player? = sender.server.getPlayer(args[0])
-            targetPlayer?.let { pl ->
-                sender.openInventory(pl.inventory)
+            if (targetPlayer == null) {
+                sender.sendMessage("§8[§cInvsee§8] §7Ce joueur n'est pas connecté.")
                 return true
             }
-            sender.sendMessage("§8[§cInvsee§8] §7Ce joueur n'est pas connecté.")
+
+            sender.openInventory(targetPlayer.inventory)
             return true
         }
     }

@@ -2,6 +2,7 @@ package main
 
 import main.commands.BroadcastCommand
 import main.commands.HealCommand
+import main.commands.InvseeCommand
 import main.commands.PlayersCommand
 
 import main.listeners.eventLoader
@@ -24,6 +25,7 @@ class Loader : JavaPlugin(), Listener, CommandExecutor{
         getCommand("heal")?.setExecutor(HealCommand())
         getCommand("broadcast")?.setExecutor(BroadcastCommand())
         getCommand("players")?.setExecutor(PlayersCommand())
+        getCommand("invsee")?.setExecutor(InvseeCommand())
         logger.info("[SUCCESS] Init des commandes")
 
         logger.info("[SUCCESS] Terozax-Core démarré")

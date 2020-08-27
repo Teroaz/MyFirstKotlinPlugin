@@ -13,7 +13,7 @@ class BroadcastCommand : CommandExecutor{
             return true
         }
 
-        if (args.isEmpty()) {
+        if (args.isEmpty() || args.toString().replace("(&.?)".toRegex(), "").isNotEmpty()) {
             sender.sendMessage("§8[§cBroadcast§8] §7La commande doit être suivie du message à diffuser.")
             return true
         }
